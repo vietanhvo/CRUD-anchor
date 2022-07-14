@@ -38,11 +38,12 @@ describe("CRUD-anchor", () => {
   it("Increments the counter", async () => {
     const baseAccount = _baseAccount;
 
-    await program.rpc.increment({
-      accounts: {
+    await program.methods
+      .increment()
+      .accounts({
         baseAccount: baseAccount.publicKey,
-      },
-    });
+      })
+      .rpc();
 
     const account = await program.account.baseAccount.fetch(
       baseAccount.publicKey
