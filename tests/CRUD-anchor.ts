@@ -13,7 +13,7 @@ describe("CRUD-anchor", () => {
   const program = anchor.workspace.CrudAnchor as Program<CrudAnchor>;
   let _baseAccount;
 
-  it("Creates a counter)", async () => {
+  it("Creates a counter", async () => {
     /* Call the create function via RPC */
     const baseAccount = anchor.web3.Keypair.generate();
     await program.methods
